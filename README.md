@@ -14,3 +14,6 @@ MCU (GND) -> MPU6050 (GND) <br>
 MCU (D5) -> RGB_LED (RED) <br>
 MCU (D6) -> RGB_LED (GREEN) <br>
 MCU (GND) -> RGB_LED (GND) <br>
+
+## Prototype
+![prototype](./images/prototype.png)
