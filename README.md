@@ -1,6 +1,10 @@
 [PlatformIO]: https://platformio.org/
+[library]: https://github.com/adafruit/Adafruit_MPU6050
 
 # STM32 black pill controller for unity
+## About
+* The controller uses Adafruit MPU6050 [library] to comunicate with the onboard MPU6050 sensor
+
 ## Parts
 * STM32 black pill or similar mcu that supports usb cdc
 * MPU6050 Accelerometer and Gyroscope or similar
