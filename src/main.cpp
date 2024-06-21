@@ -3,9 +3,11 @@
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
 
-#define RED_LED D5
-#define GREEN_LED D6
-#define JOYSTICK_PIN A0
+#define RED_LED PB3
+#define GREEN_LED PB4
+#define JOYSTICK_PIN_X PA0
+#define JOYSTICK_PIN_Y PA1
+#define JOYSTICK_PIN_SW PA15
 
 Adafruit_MPU6050 mpu;
 
@@ -47,7 +49,8 @@ void loop(void){
 }
 
 void print_data(void){
-  float joystickData = analogRead(JOYSTICK_PIN);
+  float joystickDataX = analogRead(JOYSTICK_PIN_X);
+  float joystickDataY = analogRead(JOYSTICK_PIN_Y);
 
   sensors_event_t accel, gyro, temp;
   mpu.getEvent(&accel, &gyro, &temp);
@@ -58,7 +61,9 @@ void print_data(void){
   Serial.print(";"); 
   Serial.print(accel.gyro.z);
   Serial.print(";");
-  Serial.print(joystickData);
+  Serial.print(joystickDataX);
+  Serial.print(";");
+  Serial.print(joystickDataY);
   Serial.println();
 
   //delay(50);
