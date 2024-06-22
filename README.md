@@ -8,6 +8,8 @@
 ## Parts
 * STM32 black pill or similar mcu that supports usb cdc
 * MPU6050 Accelerometer and Gyroscope or similar
+* Simple button
+* 1x 10k resistor
 * Joystick
 * (OPTIONAL) RGB led
 
@@ -16,8 +18,10 @@
 * MCU (B7) -> MPU6050 (SDA) <br>
 * MCU (3V3) -> MPU6050 (VCC) and JOYSTICK (5V) <br>
 * MCU (GND) -> MPU6050 (GND) and JOYSTICK (GND) <br>
-* MCU (A0) -> JOYSTICK (VRX)
-* MCU (A1) -> JOYSTICK (VRY)
+* MCU (A1) -> JOYSTICK (VRX)
+* MCU (A2) -> JOYSTICK (VRY)
+* MCU (B15) -> Right side of the button that has a 10k resistor pulling it low 
+* MCU (3V3) -> Left side of the button
 
 ### Optional
 * MCU (B3) -> RGB_LED (RED) <br>
