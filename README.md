@@ -3,7 +3,7 @@
 
 # STM32 black pill controller for unity
 ## About
-* The controller uses Adafruit MPU6050 [library] to comunicate with the onboard MPU6050 sensor
+* The controller uses Adafruit MPU6050 [library] to communicate with an onboard MPU6050 sensor
 
 ## Parts
 * STM32 black pill or similar mcu that supports usb cdc
