@@ -5,9 +5,9 @@
 
 #define RED_LED PB3
 #define GREEN_LED PB4
-#define JOYSTICK_PIN_X PA0
-#define JOYSTICK_PIN_Y PA1
-#define JOYSTICK_PIN_SW PA15
+#define JOYSTICK_PIN_X PA1
+#define JOYSTICK_PIN_Y PA2
+#define EXTERNAL_BUTTON PB15
 
 Adafruit_MPU6050 mpu;
 
@@ -16,8 +16,10 @@ void print_data(void);
 
 /* Initializes peripherials and serial */
 void init_devices(void){
+  // Pin setup
   pinMode(RED_LED, OUTPUT);
   pinMode(GREEN_LED, OUTPUT);
+  pinMode(EXTERNAL_BUTTON, INPUT);
 
   // Make sure that the led's are low
   digitalWrite(RED_LED, LOW);
@@ -51,6 +53,7 @@ void loop(void){
 void print_data(void){
   float joystickDataX = analogRead(JOYSTICK_PIN_X);
   float joystickDataY = analogRead(JOYSTICK_PIN_Y);
+  int buttonData = digitalRead(EXTERNAL_BUTTON);
 
   sensors_event_t accel, gyro, temp;
   mpu.getEvent(&accel, &gyro, &temp);
@@ -64,6 +67,8 @@ void print_data(void){
   Serial.print(joystickDataX);
   Serial.print(";");
   Serial.print(joystickDataY);
+  Serial.print(";");
+  Serial.print(buttonData);
   Serial.println();
 
   //delay(50);
